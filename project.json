@@ -8,10 +8,13 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "initialScene": "HelloWorldScene",
+    "designWidth": 2048,
+    "designHeight": 1536,
+    "initialScene": "MenuScene",
     "debugPhysics": false,
     "playMusic": true,
     "resourcePath": "res",
+    "font":"DolceVita",
 
     "loader": {
         "bg-color": {"r": 218, "g": 214, "b": 212, "a": 255},
@@ -23,10 +26,18 @@
         "image-win-size-percent": 0.5
     },
 
+    "strings": {
+        "en": {
+            "title": "Hello World",
+            "you-are-player-number": "Your magic number is %d."
+        }
+    },
+
     "modules" : ["cocos2d","chipmunk"],
 
     "jsList" : [
         "src/resource.js",
-        "src/app.js"
+        "src/MenuScene.js",
+        "src/GameScene.js"
     ]
 }
