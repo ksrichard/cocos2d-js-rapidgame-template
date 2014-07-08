@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>RapidGame</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="public/stylesheets/normalize.css" />
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page">
+
+      <div class="header">
+        
+          
+          <h1 id="rapidgame">RapidGame</h1>
+
+          
+        
+
+        
+          <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+              
+                
+                <li>
+                  <a class="source" href="README.html">
+                    README.md
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="GameScene.html">
+                    GameScene.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="MenuScene.html">
+                    MenuScene.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="Game.html">
+                    Game.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="server.html">
+                    server.js
+                  </a>
+                </li>
+              
+            </ol>
+          </div>
+        
+      </div>
+
+      
+        
+        <p>A Node-based templating system for rapidly creating cross-platform games for a variety of game engines, including Cocos2D-JS, Unity, Corona and Appcelerator Titanium.</p>
+<p>What it does:</p>
+<ul>
+<li><p>Creates new cross-platform game projects from provided or custom templates, which include scenes, sprites, physics, sound and more. </p>
+</li>
+<li><p>Prebuilds libraries for Cocos2D X that virtually eliminate build, compile and link time, saving in aggregate hours during development, and allowing for a more rapid development cycle without having to wait - hence the name RapidGame.</p>
+</li>
+</ul>
+<h2 id="eliminate-grunt-work">Eliminate Grunt Work</h2>
+
+        
+      
+        
+        <p>RapidGame provides:</p>
+<ol>
+<li>Tested game project templates for Cocos2D JS, Unity, Corona and Titanium</li>
+<li>A cross-platform game project creator</li>
+<li>A library prebuilder for Cocos2D X</li>
+</ol>
+<p>The templates have:</p>
+<ol>
+<li>Cross-platform project files</li>
+<li>Resolution / ratio-independence</li>
+<li>Viewport setup</li>
+<li>Menu &amp; Game scenes</li>
+<li>Sprites</li>
+<li>Custom TTF fonts</li>
+<li>Sound</li>
+<li>Music</li>
+<li>Physics</li>
+<li>HTTP game servers (HTML5-based platforms)</li>
+</ol>
+<p>The project creator makes a copy of one of the templates, does a search and replace on the game title &amp; package name, then installs any required modules. Viola. Your own rapidly-created game ready to go. Here’s some example output from running the project creator:</p>
+<p>$ rapidgamepro create Corona “Sword Ball” org.myorg.swordball
+Rapidly creating a game
+Engine: Corona
+Template: TwoScene
+Copying project files
+Setting project name: Sword Ball
+Setting package name: org.myorg.swordball
+Done</p>
+<p>Congratulations on creating a Corona game!
+Run it by opening the <code>main.lua</code> file in the Corona Simulator.
+Ready to code? Start with the <code>main.lua</code> file.</p>
+<p>The library prebuilder creates static libraries that virtually eliminate build times for the Cocos2D X engine (the native portion of Cocos2D JS). With hundreds of source files to be compiled, building Cocos2D X for just one platform can take at least five minutes. This can be a real time sink, especially when switching from the simulator to device triggers a rebuild.</p>
+<p>The prebuilder automatically downloads the latest Cocos2D JS, patches it to ensure that it is bug-free, then prebuilds Cocos2D X for all possible platforms, configurations and architectures. It is then possible to compile and link native Cocos2D X games in seconds. Even better, the project creator will absolutely symlink to the location of the prebuilt libraries so your game projects stay lightweight and can be moved easily.</p>
+<h2 id="create-a-game-in-under-30-seconds">Create a Game in Under 30 Seconds</h2>
+
+        
+      
+        
+        <p>You’ll first need <a href="http://nodejs.org/download/">Node.js</a> and <a href="http://git-scm.com/downloads">Git</a>.</p>
+<p>There’s no need to clone this repo, just install RapidGame:</p>
+<p>sudo npm install rapidgame -g</p>
+<p>And, create a Unity game named “Zombie Matrix”:</p>
+<p>rapidgame create unity “Zombie Matrix” com.myompany.zombiematrix</p>
+<p>Or, a Cocos2D JS game named “Heck Yeah”:</p>
+<p>rapidgame create cocos2d “Heck Yeah” org.myorg.heckyeah</p>
+<p>For usage instructions:</p>
+<p>rapidgame —help</p>
+<h2 id="pro-version">Pro Version</h2>
+
+        
+      
+        
+        <p>If you need cross-platform monetization, in-app purchasing, virtual economies, social networking, async multiplayer, analytics and/or ads then get <a href="http://www.binpress.com/app/rapidgame-pro-for-ios-android-facebook/1802">RapidGame Pro</a>. It has an example game called Lemonade Exchange written using the Cocos2D JS engine which includes all of the previously mentioned features and works on Facebook, iOS, Mac and Android. Support for more platforms is planned.</p>
+<h2 id="breakout-clones">Breakout Clones</h2>
+
+        
+      
+        
+        <p>To test the validity of RapidGame, four Breakout clones were written for Unity, Corona, Cocos2D JS and Titanium. I found that using RapidGame can save up to ~80% of development time for simple games. To read more about the findings, see <a href="http://www.binpress.com/blog/2014/05/14/selecting-cross-platform-game-engine/">Selecting a Cross-platform Game Engine</a>.</p>
+<h2 id="more-about-prebuilding">More About Prebuilding</h2>
+
+        
+      
+        
+        <p>The command to prebuild Cocos2D X static libraries used by Cocos2D JS on native platforms:</p>
+<p>rapidgame prebuild</p>
+<p>When the command is finished, you’ll have a directory (<code>~/Library/Developer/RapidGame</code> on Macs) with include files, java files, make files, Javascript bindings and library files for iOS, Mac and Android in Debug and Release mode for all available architectures.</p>
+<h2 id="custom-cocos2d-projects">Custom Cocos2D Projects</h2>
+
+        
+      
+        
+        <p>If you are just using Cocos2D X or you have your own custom project layout, you can still use the prebuilt libraries. Use this command to create a symlink to the libraries directory:</p>
+<p>cd MyGame &amp;&amp; rapidgame init .</p>
+<p>Then setup your Xcode target to reference the headers. Example:</p>
+<p>USER_HEADER_SEARCH_PATHS = $(inherited)
+$(SRCROOT)/../lib/cocos2d/x/include/cocos
+$(SRCROOT)/../lib/cocos2d/x/include/cocos/2d
+…</p>
+<p>And the libraries:</p>
+<p>LIBRARY_SEARCH_PATHS = $(SRCROOT)/../lib/cocos2d/x/lib/$(CONFIGURATION)-iOS/$(PLATFORM_NAME)</p>
+<p>Then link with the library:</p>
+<p>OTHER_LDFLAGS = -lcocos2dx-prebuilt</p>
+<h2 id="create-your-own-templates">Create Your Own Templates</h2>
+
+        
+      
+        
+        <p>It’s possible to create your own game templates. Here’s the step-by-step instructions:</p>
+<ol>
+<li><p>Create your game directory. If your game is called “Zombie Matrix”, name the directory <code>Zombie Matrix</code>, including the space.</p>
+</li>
+<li><p>Use the name of your game including any whitespace or punctation throughout your game project. RapidGame will automatically search and replace the title in most types of source and project files.</p>
+</li>
+<li><p>If you’d like a file or directory renamed, make sure it starts with your game’s title. For example, if you have <code>Zombie Matrix.xcodeproj</code> it will get changed to <code>MyNewGame.xcodeproj</code>.</p>
+</li>
+<li><p>Whenever there’s an instance of your package name, replace the beginning with <code>com.wizardfu.</code>, lowercase the title and remove any punctuation, so <code>com.mycompany.zombierevolution</code> becomes <code>com.wizardfu.zombierevolution</code>. This will get changed by the templating system when creating new game projects.</p>
+</li>
+<li><p>Copy your game template to the <code>templates/&lt;engine&gt;</code> directory of RapidGame. On Mac / Linux this is <code>/usr/local/lib/node_modules/rapidgame</code>. You can use the <code>npm prefix -g</code> command to determine where Node modules are installed on your system. If you’re on Mac OS X, the template is for Unity and it’s called “Zombie Matrix” then the final directory would be <code>/usr/local/lib/node_modules/rapidgame/templates/unity/Zombie Matrix/</code>.</p>
+</li>
+<li><p>Your template is now ready for testing. Try it out like this: <code>rapidgame create &lt;engine&gt; MyNewGame com.mycompany.mynewgame -t &quot;Zombie Matrix&quot;</code>.</p>
+</li>
+</ol>
+<h2 id="contributing">Contributing</h2>
+
+        
+      
+        
+        <p>Submit pull requests or open issues as you see fit.</p>
+<h2 id="license">License</h2>
+
+        
+      
+        
+        <p>RapidGame is licensed under the MIT license.</p>
+
+        
+      
+
+        
+          <div>
+            <h4>Table of Contents</h4>
+            <ol>
+              
+                
+                <li>
+                  <a class="source" href="README.html">
+                    README.md
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="GameScene.html">
+                    GameScene.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="MenuScene.html">
+                    MenuScene.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="Game.html">
+                    Game.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="server.html">
+                    server.js
+                  </a>
+                </li>
+              
+            </ol>
+          </div>
+        
+
+      <div class="fleur">h</div>
+    </div>
+  </div>
+</body>
+</html>

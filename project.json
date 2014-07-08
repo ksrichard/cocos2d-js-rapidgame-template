@@ -1,0 +1,32 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "initialScene": "HelloWorldScene",
+    "debugPhysics": false,
+    "playMusic": true,
+    "resourcePath": "res",
+
+    "loader": {
+        "bg-color": {"r": 218, "g": 214, "b": 212, "a": 255},
+        "text": "L o a d i n g . . .",
+        "text-font": "Arial",
+        "text-color": {"r": 128, "g": 128, "b": 128, "a": 255},
+        "text-size": 40,
+        "bar-color": {"r": 9, "g": 9, "b": 10, "a": 255},
+        "image-win-size-percent": 0.5
+    },
+
+    "modules" : ["cocos2d","chipmunk"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/app.js"
+    ]
+}
